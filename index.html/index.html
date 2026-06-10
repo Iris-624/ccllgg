@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>云端数据管理平台</title>
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <section class="login-screen" id="loginScreen">
+      <div class="login-card">
+        <div class="login-brand">
+          <img class="logo" src="./assets/platform-logo.png" alt="平台 logo" />
+          <div>
+            <h1>云端数据管理平台</h1>
+            <p>请输入账号和密码进入数据平台</p>
+          </div>
+        </div>
+        <label class="login-field">
+          <span>用户账号</span>
+          <input id="accountInput" type="text" placeholder="请输入账号" />
+        </label>
+        <label class="login-field">
+          <span>密码</span>
+          <input id="passwordInput" type="password" placeholder="请输入密码" />
+        </label>
+        <p class="login-error hidden" id="loginError">账号或密码错误</p>
+        <button class="primary-button login-submit" id="loginSubmitButton">登入</button>
+        <small class="login-hint">Demo 账号：admin / 密码：123456</small>
+      </div>
+    </section>
+
+    <div class="app-shell hidden" id="appShell">
+      <header class="app-header">
+        <div class="brand">
+          <img class="logo" src="./assets/platform-logo.png" alt="平台 logo" />
+          <h1>云端数据管理平台</h1>
+        </div>
+
+        <div class="header-actions">
+          <label class="search-control">
+            <span>搜索</span>
+            <input id="globalSearchInput" type="search" placeholder="测试者编号 / 记录类型" />
+          </label>
+          <button class="ghost-button" id="exportHistoryButton">导出记录</button>
+        </div>
+      </header>
+
+      <main class="main-layout">
+        <aside class="category-nav">
+          <h2>大分类</h2>
+          <div id="categoryList"></div>
+        </aside>
+
+        <section class="content-panel">
+          <div class="content-header">
+            <div>
+              <p class="eyebrow">记录列表</p>
+              <h2 id="contentTitle">神经生理</h2>
+            </div>
+            <div class="content-actions">
+              <button class="mini-button hidden" id="backButton">返回列表</button>
+              <button class="secondary-button" id="refreshButton">刷新</button>
+            </div>
+          </div>
+
+          <div id="contentBody"></div>
+        </section>
+      </main>
+    </div>
+
+    <div class="toast" id="toast">操作完成</div>
+    <script src="./script.js?v=20260610"></script>
+  </body>
+</html>
